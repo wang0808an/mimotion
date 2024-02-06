@@ -62,7 +62,7 @@ def getWeather():
 # 获取北京时间确定随机步数&启动主函数
 def getBeijinTime():
     global K, type
-    K = 1.3
+    K = 1.5
     type = ""
     hea = {'User-Agent': 'Mozilla/5.0'}
     url = r'https://apps.game.qq.com/CommArticle/app/reg/gdate.php'
@@ -76,8 +76,8 @@ def getBeijinTime():
         hour = find.group(1)
         min_ratio = max(math.ceil((int(hour) / 3) - 1), 0)
         max_ratio = math.ceil(int(hour) / 3)
-        min_1 = 2000 * min_ratio
-        max_1 = 2000 * max_ratio
+        min_1 = 3000 * min_ratio
+        max_1 = 3000 * max_ratio
         min_1 = int(K * min_1)
         max_1 = int(K * max_1)
     else:
